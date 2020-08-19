@@ -29,7 +29,16 @@ class HomeController extends Controller
         $posts = Post::all();
         $countries = Countrie::all();
         
-        return view("/welcome")->with(array("posts" => $posts, "countries" => $countries));
+        return view("/welcome")->with(array("posts" => $posts, "countries" => $countries));      
+    }
+
+    public function search(Request $request)
+    {
+
+        $nombre = $request->get('buscarpor');
+
+        $Post = Post::where('post','like',"%$nombre%")->paginate(5);
         
+        return view('/search', compact('Post'));
     }
 }

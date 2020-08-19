@@ -28,3 +28,5 @@ Route::get('/store', 'PostController@store')->name('store');
 Route::get('/country', 'CountrieController@index')->name('country');
 
 Route::get('/post', 'PostController@index')->name('post');
+
+Route::get('/search', 'HomeController@search')->name('search');

@@ -14,4 +14,10 @@ class Post extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function scopeBuscarpor($query, $nombres) {
+    	if ($nombres) {
+    		return $query->where('post','like',"%$nombres%");
+    	}
+    }
 }

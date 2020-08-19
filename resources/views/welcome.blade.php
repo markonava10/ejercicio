@@ -15,6 +15,14 @@
         </style>
     </head>
     <body>
+      <nav class="navbar navbar-light bg-light justify-content-between">
+        <a class="navbar-brand">Buscar</a>
+        <form action= "/search" method="GET" class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+      </nav>
+           
         <div class="content">
           @extends('layouts.app')
             @section('content')
@@ -73,14 +81,10 @@
                   </tbody>
                 </table> 
                 </div>
-              </div>
-            
-
-
-                  
+              </div>           
             </div>
-                 @endsection
-            </div>
+          @endsection
+        </div>
         </div>
     </body>
 </html>
